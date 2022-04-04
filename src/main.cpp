@@ -1,12 +1,27 @@
-#include "../Resturants.h"
+#include "../lib/Resturants.cpp"
+#include "../lib/Users.cpp"
 #include <string.h>
 #include <iostream>
+using namespace std;
+
+Users* initialize_user(){
+    string name;
+    cout << "Please enter your name:" << endl;
+    cin >> name;
+    Users* newuser = new Users(name);
+    return newuser;
+}
 
 int main(){
-    Resturant a("SG", 0);
-    Resturant b("Chipolet", 3);
-    std::string name1 = a.getName();
-    std::string name2 = b.getName();
+    Resturants a("SG", 0);
+    Resturants b("Chipolet", 3);
+    string name1 = a.getName();
+    string name2 = b.getName();
     uint8_t weight1 = a.getWeight();
-    std::cout << name1 << "'s weight is "<< weight1<<std::endl;
+    uint8_t weight2 = b.getWeight();
+    cout << name1 << "'s weight is "<< (int)weight2 <<endl;
+
+    Users* newuser = initialize_user();
+    cout << newuser->getName() << endl;
+    
 }
