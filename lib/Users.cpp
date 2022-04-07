@@ -7,8 +7,8 @@
 class Users{
     private:
     std::string _username;
-    std::set<Resturants> _favorites;
     public:
+    std::set<Resturants*> favorites;
     Users(std::string name)
     : _username(name){}
 
